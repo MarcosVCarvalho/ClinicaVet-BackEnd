@@ -2,20 +2,11 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
-Route::prefix('usuarios')->group(function (){
-    Route::get('/edit',function() {
-        return 'edit';
-    });
-    Route::get('/create',function() {
-        return 'create';
-    });
-});
 
-Route::get('/{id?}', function ($id = "oi") {
-    return $id;
-});
+Route::get('/', function ($id = "oi") {
+    return view('welcome');
+})->name( 'home' );
 
-Route::get('/user/{user}', function (User $user) {
-    return dd($user);
-});
+Route::get('/user/{user}',[UserController::class, 'show']);
