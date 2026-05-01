@@ -8,5 +8,10 @@
 <body>
     {{ $user->name }} <br>
     {{ $name }}
+    @if ($user->name == 'Kenya Terry')
+        <h1>seu nome é Kenya Terry</h1>
+    @endif
+
+    {{ date('d/m/y') }}
 </body>
 </html>

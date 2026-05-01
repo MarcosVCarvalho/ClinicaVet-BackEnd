@@ -10,3 +10,4 @@ Route::get('/', function ($id = "oi") {
 })->name( 'home' );
 
 Route::get('/user/{user}',[UserController::class, 'show']);
+Route::get('/users/',[UserController::class, 'index']);
