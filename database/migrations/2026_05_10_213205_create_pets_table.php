@@ -23,7 +23,6 @@ return new class extends Migration
         $table->string('raca')->nullable(); // Aceita vazio para vira-latas
         $table->date('data_nascimento')->nullable();
         $table->decimal('peso', 5, 2)->nullable(); // Suporta até 999.99 kg
-        $table->enum('sexo', ['M', 'F', 'Indeterminado']);
         
         $table->timestamps();
     });
