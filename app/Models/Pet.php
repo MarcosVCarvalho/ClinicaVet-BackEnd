@@ -2,13 +2,34 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory; // 1. Importe a Trait
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Pet extends Model // Certifique-se que o nome da classe está correto
+class Pet extends Model
 {
-    use HasFactory; // 2. Use a Trait dentro da classe
+    use HasFactory, SoftDeletes;
 
-    // Seus outros códigos (fillable, relacionamentos, etc)
-    protected $fillable = ['nome', 'data_nascimento', 'user_id'];
+    protected $tabel = 'tutores';
+    protected $fillable = [
+        'nome',
+        'especie',
+        'raca',
+        'idade',
+        'sexo',
+        'peso',
+        'tutor_id'
+    ];
+
+    //Relacionamento: 1:1
+    public function tutor(){
+        return $this->belongsTo(Tutor::class);
+    }
+
+    //Relacionamento: 1:N
+    //public function consultas()
+    //{
+    //    return $this->hasMany(Consulta::class);
+    //}
+
 }
