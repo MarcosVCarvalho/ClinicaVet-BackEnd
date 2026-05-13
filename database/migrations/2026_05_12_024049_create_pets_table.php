@@ -11,11 +11,11 @@ return new class extends Migration
         Schema::create('pets', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('especie');
+            $table->enum('especie',['cachorro','gato','outros']);
             $table->string('raca')->nullable();
             $table->integer('idade')->nullable();
             $table->enum('sexo', ['M', 'F']); 
-            $table->decimal('peso', 8, 2)->nullable();
+            $table->decimal('peso', 5, 2)->nullable();
             
             $table->foreignId('tutor_id')->constrained('tutores')->onDelete('cascade');
 

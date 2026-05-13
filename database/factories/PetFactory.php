@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\Pet; // Verifique se seu model é Pet
+use App\Models\Pet;
+use App\Models\Tutor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PetFactory extends Factory // O nome da classe deve ser igual ao do arquivo
+class PetFactory extends Factory
 {
     protected $model = Pet::class;
 
@@ -13,9 +14,12 @@ class PetFactory extends Factory // O nome da classe deve ser igual ao do arquiv
     {
         return [
             'nome' => fake()->firstName(),
-            'data_nascimento' => fake()->date(),
-            'user_id' => \App\Models\User::all()->random()->id, 
-            'especie' => fake()->randomElement(['Cachorro', 'Gato', 'Hamster', 'Cavalos']),
+            'especie' => fake()->randomElement(['Cachorro', 'Gato', 'outros']),
+            'sexo' => fake()->randomElement(['M', 'F']),
+            'idade'   => fake()->numberBetween(1, 15),
+            'peso'    => fake()->randomFloat(2, 1, 40),
+            
+            'tutor_id' => Tutor::factory(),
         ];
     }
 }

@@ -19,6 +19,7 @@ class Tutor extends Model
     ];
 
 
+    //Relacionamento: 1:N com Pet
     public function pets(){
         return $this->hasMany(Pet::class);
     }
