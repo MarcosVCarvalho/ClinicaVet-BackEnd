@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agendamento;
 use Illuminate\Http\Request;
-use App\Models\Tutor;
 
-class TutorController extends Controller
+class AgendamentoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $tutores = Tutor::with('pets')->get();
-        return view('tutores', compact('tutores'));
+        $agendamentos = Agendamento::with('pet.tutor')
+            ->orderBy('data', 'asc')
+            ->orderBy('hora', 'asc')
+            ->get();
+
+        return view('agendamento', compact('agendamentos'));
     }
 
     /**

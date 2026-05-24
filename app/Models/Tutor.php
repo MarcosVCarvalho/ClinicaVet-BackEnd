@@ -10,7 +10,7 @@ class Tutor extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $tabel = 'tutores';
+    protected $table = 'tutores';
     protected $fillable = [
         'nome',
         'email',

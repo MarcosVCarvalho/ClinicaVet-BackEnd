@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('pet_id')->constrained('pets')->onDelete('cascade');
             $table->dateTime('data_horario');
             $table->decimal('valor',8,2);
-            $table->enum('servico', ['Banho', 'Tosa', 'Banho e Tosa', 'Outros']);
+            $table->enum('servico', ['banho', 'tosa', 'banho e tosa', 'outros']);
             $table->enum('status', ['agendado', 'em andamento', 'concluido']);
             $table->text('observacoes')->nullable();
 

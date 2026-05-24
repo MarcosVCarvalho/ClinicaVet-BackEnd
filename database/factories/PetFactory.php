@@ -14,7 +14,7 @@ class PetFactory extends Factory
     {
         return [
             'nome' => fake()->firstName(),
-            'especie' => fake()->randomElement(['Cachorro', 'Gato', 'outros']),
+            'especie' => fake()->randomElement(['cachorro', 'gato', 'outros']),
             'sexo' => fake()->randomElement(['M', 'F']),
             'idade'   => fake()->numberBetween(1, 15),
             'peso'    => fake()->randomFloat(2, 1, 40),

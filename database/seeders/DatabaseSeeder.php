@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Tutor;
-use App\Models\Pet;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -18,6 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             TutorSeeder::class,
+            AgendamentoSeeder::class,
         ]);
     }
 }
