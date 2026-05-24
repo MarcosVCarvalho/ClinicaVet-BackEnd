@@ -37,7 +37,8 @@ class TutorController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $tutores = Tutor::with('pets')->findOrFail($id);
+        return view('tutores.show', compact('tutor'));
     }
 
     /**
