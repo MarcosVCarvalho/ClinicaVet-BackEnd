@@ -12,6 +12,6 @@ Route::get('/', function ($id = "oi") {
 })->name( 'home' );
 
 
-Route::get('/pets/',[PetsController::class, 'index']);
+Route::resource('pets', PetsController::class);
 Route::get('/tutores/',[TutorController::class, 'index']);
 Route::get('/agendamentos/',[AgendamentoController::class, 'index']);

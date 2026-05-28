@@ -21,7 +21,7 @@ class AgendamentoSeeder extends Seeder
         }
 
         foreach ($pets as $pet) {
-            // Cria entre 1 e 3 agendamentos falsos para esse pet específico
+            // Cria 1 e 3 agendamentos falsos para esse pet específico
             Agendamento::factory(rand(1, 3))->create([
                 'pet_id' => $pet->id
             ]);

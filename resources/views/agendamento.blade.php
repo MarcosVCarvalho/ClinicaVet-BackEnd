@@ -41,8 +41,8 @@
                             <tr class="bg-white border-b hover:bg-gray-50 transition">
                                 <!-- Data e Hora -->
                                 <td class="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap">
-                                    <div class="text-blue-600 text-base">{{ \Carbon\Carbon::parse($agendamento->hora)->format('H:i') }}</div>
-                                    <div class="text-xs text-gray-400 font-normal">{{ \Carbon\Carbon::parse($agendamento->data)->format('d/m/Y') }}</div>
+                                    <div class="text-blue-600 text-base">{{ \Carbon\Carbon::parse($agendamento->data_horario)->format('H:i') }}</div>
+                                    <div class="text-xs text-gray-400 font-normal">{{ \Carbon\Carbon::parse($agendamento->data_horario)->format('d/m/Y') }}</div>
                                 </td>
 
                                 <!-- Pet -->

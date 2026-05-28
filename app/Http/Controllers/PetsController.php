@@ -15,4 +15,11 @@ class PetsController extends Controller
         $pets = Pet::with('tutor')->get();
         return view('pets.index', compact('pets'));
     }
+
+    public function create(){
+        return view('pets.create');
+    }
+    public function show(Pet $pet){
+        return view('pets.show', compact('pet'));
+    }
 }

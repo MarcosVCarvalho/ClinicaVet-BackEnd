@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Reset básico */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
 
-        /* Banner */
-        #banner {
-            height: 100px;
-            background: linear-gradient(135deg, #1408f7, #06b6d4);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        
-        #banner h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
-        </style>
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>@yield('title', 'Meu Layout')</title>
+    <title>@yield('title', 'PetShop - MyPet')</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
-<body>
-    @yield('stylers')
 
-    <div id="banner">
-        <h1>Meu layout</h1>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
+                <i class="bi bi-house"></i>
+                PetShop - MyPet
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('home') }}">
+                            Início
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('pets.index') }}">
+                            Pets
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <div class="container mt-4">
+        @yield('content')
     </div>
-    @yield('content')
 
 </body>
 </html>
