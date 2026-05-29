@@ -12,12 +12,8 @@ class AgendamentoController extends Controller
      */
     public function index()
     {
-        $agendamentos = Agendamento::with('pet.tutor')
-            ->orderBy('data', 'asc')
-            ->orderBy('hora', 'asc')
-            ->get();
-
-        return view('agendamento', compact('agendamentos'));
+        $agendamentos = Agendamento::with('pet.tutor')->get();
+        return view('agendamentos.index', compact('agendamentos'));
     }
 
     /**

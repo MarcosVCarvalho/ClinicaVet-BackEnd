@@ -7,11 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetsController;
 
 
-Route::get('/', function ($id = "oi") {
-    return view('welcome');
-})->name( 'home' );
-
 
 Route::resource('pets', PetsController::class);
-Route::get('/tutores/',[TutorController::class, 'index']);
-Route::get('/agendamentos/',[AgendamentoController::class, 'index']);
+Route::resource('/tutores',TutorController::class);
+Route::resource('/agendamentos', AgendamentoController::class,);

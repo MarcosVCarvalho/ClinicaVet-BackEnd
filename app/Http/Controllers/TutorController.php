@@ -13,7 +13,7 @@ class TutorController extends Controller
     public function index()
     {
         $tutores = Tutor::with('pets')->get();
-        return view('tutores', compact('tutores'));
+        return view('tutores.index', compact('tutores'));
     }
 
     /**
@@ -21,7 +21,7 @@ class TutorController extends Controller
      */
     public function create()
     {
-        //
+        return view('tutores.create');
     }
 
     /**
